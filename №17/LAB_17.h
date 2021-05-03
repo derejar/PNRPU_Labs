@@ -12,44 +12,44 @@ struct humanInfo
 {
     struct address
     {
-        string streetName; //название улицы
-        int houseNum; //номер дома
-        int apartNum; //номер квартиры
+        string streetName; //РЅР°Р·РІР°РЅРёРµ СѓР»РёС†С‹
+        int houseNum; //РЅРѕРјРµСЂ РґРѕРјР°
+        int apartNum; //РЅРѕРјРµСЂ РєРІР°СЂС‚РёСЂС‹
     };
-    string fio; //фио
-    int passNum; //номер паспорта
-    address *registration = new address; //адрес
+    string fio; //С„РёРѕ
+    int passNum; //РЅРѕРјРµСЂ РїР°СЃРїРѕСЂС‚Р°
+    address *registration = new address; //Р°РґСЂРµСЃ
     int hash;
 };
 
 int makeHash(string streetName, int houseNum, int apartNum);
 
-void print(vector<humanInfo> hashTable) //Печать таблицы
+void print(vector<humanInfo> hashTable) //РџРµС‡Р°С‚СЊ С‚Р°Р±Р»РёС†С‹
 {
-    cout << endl << "ХЕШ-ТАБЛИЦА: " << endl;
+    cout << endl << "РҐР•РЁ-РўРђР‘Р›РР¦Рђ: " << endl;
     for(int i=0; i<*tableSize; i++)
     {
         cout << endl; 
-        cout << i << " элемент:" << endl;
+        cout << i << " СЌР»РµРјРµРЅС‚:" << endl;
         if(hashTable[i].fio == "")
         {
-            cout << "Элемент пуст." << endl;
+            cout << "Р­Р»РµРјРµРЅС‚ РїСѓСЃС‚." << endl;
         }
         else
         {
-            cout << "ФИО: " << hashTable[i].fio << endl;
-            cout << "Номер паспорта: " << hashTable[i].passNum << endl;
-            cout << "Улица " << hashTable[i].registration->streetName << ", дом " << hashTable[i].registration->houseNum << ", кв. " << hashTable[i].registration->apartNum << endl;
-            cout << "Хеш: " << hashTable[i].hash << endl;
+            cout << "Р¤РРћ: " << hashTable[i].fio << endl;
+            cout << "РќРѕРјРµСЂ РїР°СЃРїРѕСЂС‚Р°: " << hashTable[i].passNum << endl;
+            cout << "РЈР»РёС†Р° " << hashTable[i].registration->streetName << ", РґРѕРј " << hashTable[i].registration->houseNum << ", РєРІ. " << hashTable[i].registration->apartNum << endl;
+            cout << "РҐРµС€: " << hashTable[i].hash << endl;
         }  
     }
 }
 
-void elemOfTableGenerator(vector<humanInfo> &hashTable) //Создание элемента таблицы
+void elemOfTableGenerator(vector<humanInfo> &hashTable) //РЎРѕР·РґР°РЅРёРµ СЌР»РµРјРµРЅС‚Р° С‚Р°Р±Р»РёС†С‹
 {
-    //генерация улицы, номера дома, номера квартиры:
-    string streetNames[] = {"Центральная", "Молодежная", "Школьная", "Лесная", "Советская", "Новая", "Садовая", "Набережная", "Заречная", "Зеленая",
-    "Мира", "Ленина", "Полевая", "Луговая", "Октябрьская", "Комсомольская", "Гагарина", "Первомайская", "Северная", "Солнечная"};
+    //РіРµРЅРµСЂР°С†РёСЏ СѓР»РёС†С‹, РЅРѕРјРµСЂР° РґРѕРјР°, РЅРѕРјРµСЂР° РєРІР°СЂС‚РёСЂС‹:
+    string streetNames[] = {"Р¦РµРЅС‚СЂР°Р»СЊРЅР°СЏ", "РњРѕР»РѕРґРµР¶РЅР°СЏ", "РЁРєРѕР»СЊРЅР°СЏ", "Р›РµСЃРЅР°СЏ", "РЎРѕРІРµС‚СЃРєР°СЏ", "РќРѕРІР°СЏ", "РЎР°РґРѕРІР°СЏ", "РќР°Р±РµСЂРµР¶РЅР°СЏ", "Р—Р°СЂРµС‡РЅР°СЏ", "Р—РµР»РµРЅР°СЏ",
+    "РњРёСЂР°", "Р›РµРЅРёРЅР°", "РџРѕР»РµРІР°СЏ", "Р›СѓРіРѕРІР°СЏ", "РћРєС‚СЏР±СЂСЊСЃРєР°СЏ", "РљРѕРјСЃРѕРјРѕР»СЊСЃРєР°СЏ", "Р“Р°РіР°СЂРёРЅР°", "РџРµСЂРІРѕРјР°Р№СЃРєР°СЏ", "РЎРµРІРµСЂРЅР°СЏ", "РЎРѕР»РЅРµС‡РЅР°СЏ"};
     string tempStreetName = streetNames[rand()%20];
     int tempHouseNum = rand()%150;
     int tempApartNum = rand()%80;
@@ -65,17 +65,17 @@ void elemOfTableGenerator(vector<humanInfo> &hashTable) //Создание элемента табл
     }
     hash%=(*tableSize);
 
-    string firstNames[] = {"Александр", "Алексей", "Анатолий", "Андрей", "Антон", "Арсений", "Артем", "Борис", "Вадим", "Валентин",
-    "Валерий", "Василий", "Виктор", "Виталий", "Владимир", "Георгий", "Даниил", "Денис", "Дмитрий", "Евгений"};
+    string firstNames[] = {"РђР»РµРєСЃР°РЅРґСЂ", "РђР»РµРєСЃРµР№", "РђРЅР°С‚РѕР»РёР№", "РђРЅРґСЂРµР№", "РђРЅС‚РѕРЅ", "РђСЂСЃРµРЅРёР№", "РђСЂС‚РµРј", "Р‘РѕСЂРёСЃ", "Р’Р°РґРёРј", "Р’Р°Р»РµРЅС‚РёРЅ",
+    "Р’Р°Р»РµСЂРёР№", "Р’Р°СЃРёР»РёР№", "Р’РёРєС‚РѕСЂ", "Р’РёС‚Р°Р»РёР№", "Р’Р»Р°РґРёРјРёСЂ", "Р“РµРѕСЂРіРёР№", "Р”Р°РЅРёРёР»", "Р”РµРЅРёСЃ", "Р”РјРёС‚СЂРёР№", "Р•РІРіРµРЅРёР№"};
 
-    string familyNames[] = {"Воробьев", "Богданов", "Виноградов", "Голубев", "Семенов", "Павлов", "Зайцев", "Васильев", "Соловьев",
-    "Волков", "Петров", "Морозов", "Новиков", "Козлов", "Лебедев", "Соколов", "Попов", "Кузнецов", "Иванов", "Смирнов"};
+    string familyNames[] = {"Р’РѕСЂРѕР±СЊРµРІ", "Р‘РѕРіРґР°РЅРѕРІ", "Р’РёРЅРѕРіСЂР°РґРѕРІ", "Р“РѕР»СѓР±РµРІ", "РЎРµРјРµРЅРѕРІ", "РџР°РІР»РѕРІ", "Р—Р°Р№С†РµРІ", "Р’Р°СЃРёР»СЊРµРІ", "РЎРѕР»РѕРІСЊРµРІ",
+    "Р’РѕР»РєРѕРІ", "РџРµС‚СЂРѕРІ", "РњРѕСЂРѕР·РѕРІ", "РќРѕРІРёРєРѕРІ", "РљРѕР·Р»РѕРІ", "Р›РµР±РµРґРµРІ", "РЎРѕРєРѕР»РѕРІ", "РџРѕРїРѕРІ", "РљСѓР·РЅРµС†РѕРІ", "РРІР°РЅРѕРІ", "РЎРјРёСЂРЅРѕРІ"};
 
-    string fatherNames[] = {"Александрович", "Андреевич", "Богданович", "Валентинович", "Витальевич", "Георгиевич", "Григорьевич", "Игоревич", "Иванович", "Ильич",
-    "Кириллович", "Константинович", "Максимович", "Михайлович", "Николаевич", "Олегович", "Павлович", "Петрович", "Романович", "Сергеевич"};
+    string fatherNames[] = {"РђР»РµРєСЃР°РЅРґСЂРѕРІРёС‡", "РђРЅРґСЂРµРµРІРёС‡", "Р‘РѕРіРґР°РЅРѕРІРёС‡", "Р’Р°Р»РµРЅС‚РёРЅРѕРІРёС‡", "Р’РёС‚Р°Р»СЊРµРІРёС‡", "Р“РµРѕСЂРіРёРµРІРёС‡", "Р“СЂРёРіРѕСЂСЊРµРІРёС‡", "РРіРѕСЂРµРІРёС‡", "РРІР°РЅРѕРІРёС‡", "РР»СЊРёС‡",
+    "РљРёСЂРёР»Р»РѕРІРёС‡", "РљРѕРЅСЃС‚Р°РЅС‚РёРЅРѕРІРёС‡", "РњР°РєСЃРёРјРѕРІРёС‡", "РњРёС…Р°Р№Р»РѕРІРёС‡", "РќРёРєРѕР»Р°РµРІРёС‡", "РћР»РµРіРѕРІРёС‡", "РџР°РІР»РѕРІРёС‡", "РџРµС‚СЂРѕРІРёС‡", "Р РѕРјР°РЅРѕРІРёС‡", "РЎРµСЂРіРµРµРІРёС‡"};
 
-    hashTable[hash].fio = familyNames[rand()%20] + " " + firstNames[rand()%20] + " " + fatherNames[rand()%20]; //генерация фио
-    hashTable[hash].passNum = (100+rand()%900)*1000+(100+rand()%900); //генерация номера паспорта (3 первых цифры + 3 последних)
+    hashTable[hash].fio = familyNames[rand()%20] + " " + firstNames[rand()%20] + " " + fatherNames[rand()%20]; //РіРµРЅРµСЂР°С†РёСЏ С„РёРѕ
+    hashTable[hash].passNum = (100+rand()%900)*1000+(100+rand()%900); //РіРµРЅРµСЂР°С†РёСЏ РЅРѕРјРµСЂР° РїР°СЃРїРѕСЂС‚Р° (3 РїРµСЂРІС‹С… С†РёС„СЂС‹ + 3 РїРѕСЃР»РµРґРЅРёС…)
     hashTable[hash].registration->streetName = tempStreetName;
     hashTable[hash].registration->houseNum = tempHouseNum;
     hashTable[hash].registration->apartNum = tempApartNum;
@@ -83,7 +83,7 @@ void elemOfTableGenerator(vector<humanInfo> &hashTable) //Создание элемента табл
     (*countOfElements)++;
 }
 
-int makeHash(string streetName, int houseNum, int apartNum) //Расчет хеша
+int makeHash(string streetName, int houseNum, int apartNum) //Р Р°СЃС‡РµС‚ С…РµС€Р°
 {
     int countToEnd=0;
     float preResult=0;
@@ -104,7 +104,7 @@ int makeHash(string streetName, int houseNum, int apartNum) //Расчет хеша
     return result;   
 }
 
-void resizeTable(vector<humanInfo> &hashTable) //Изменение размера таблицы
+void resizeTable(vector<humanInfo> &hashTable) //РР·РјРµРЅРµРЅРёРµ СЂР°Р·РјРµСЂР° С‚Р°Р±Р»РёС†С‹
 {
     *tableSize *= 2;
     vector<humanInfo> temp(*tableSize);
@@ -132,11 +132,11 @@ void searchElem(vector<humanInfo> &hashTable)
     bool finded = true;
     string searchStreetName;
     int searchHouseNum, searchApartNum;
-    cout << "Введите название улицы: ";
+    cout << "Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ СѓР»РёС†С‹: ";
     cin >> searchStreetName;
-    cout << "Введите номер дома: ";
+    cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РґРѕРјР°: ";
     cin >> searchHouseNum;
-    cout << "Введите номер квартиры: ";
+    cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РєРІР°СЂС‚РёСЂС‹: ";
     cin >> searchApartNum;
     int hash = makeHash(searchStreetName, searchHouseNum, searchApartNum);
     int tempHash = hash;
@@ -152,15 +152,15 @@ void searchElem(vector<humanInfo> &hashTable)
     }
     if(finded)
     {
-        cout << endl << "Элемент найден!" << endl; 
-        cout << hash << " элемент:" << endl;
-        cout << "ФИО: " << hashTable[hash].fio << endl;
-        cout << "Номер паспорта: " << hashTable[hash].passNum << endl;
-        cout << "Улица " << hashTable[hash].registration->streetName << ", дом " << hashTable[hash].registration->houseNum << ", кв. " << hashTable[hash].registration->apartNum << endl;
-        cout << "Хеш: " << hashTable[hash].hash << endl << endl;
+        cout << endl << "Р­Р»РµРјРµРЅС‚ РЅР°Р№РґРµРЅ!" << endl; 
+        cout << hash << " СЌР»РµРјРµРЅС‚:" << endl;
+        cout << "Р¤РРћ: " << hashTable[hash].fio << endl;
+        cout << "РќРѕРјРµСЂ РїР°СЃРїРѕСЂС‚Р°: " << hashTable[hash].passNum << endl;
+        cout << "РЈР»РёС†Р° " << hashTable[hash].registration->streetName << ", РґРѕРј " << hashTable[hash].registration->houseNum << ", РєРІ. " << hashTable[hash].registration->apartNum << endl;
+        cout << "РҐРµС€: " << hashTable[hash].hash << endl << endl;
     }
     else
     {
-        cout << endl << "Элемент не найден!" << endl << endl;
+        cout << endl << "Р­Р»РµРјРµРЅС‚ РЅРµ РЅР°Р№РґРµРЅ!" << endl << endl;
     }
 }
