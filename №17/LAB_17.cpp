@@ -18,11 +18,11 @@ int main()
     int choose = 0;
     while(choose < 1 || choose > 3)
     {
-        cout << "Âûáåðèòå ðàçìåð õåø-òàáëèöû: " << endl;
-        cout << "[1] 40 ýëåìåíòîâ." << endl;
-        cout << "[2] 75 ýëåìåíòîâ." << endl;
-        cout << "[3] 90 ýëåìåíòîâ." << endl;
-        cout << "Âûø âûáîð: ";
+        cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ñ…ÐµÑˆ-Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñ‹: " << endl;
+        cout << "[1] 40 ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð²." << endl;
+        cout << "[2] 75 ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð²." << endl;
+        cout << "[3] 90 ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð²." << endl;
+        cout << "Ð’Ñ‹Ñˆ Ð²Ñ‹Ð±Ð¾Ñ€: ";
         cin >> choose;
         cout << endl;
         switch(choose)
@@ -30,7 +30,7 @@ int main()
             case 1: *tableSize = 40; break;
             case 2: *tableSize = 75; break;
             case 3: *tableSize = 90; break;
-            default: cout << "Âû ââåëè íåïðàâèëüíîå çíà÷åíèå! Ïîïðîáóéòå åùå ðàç!" << endl << endl; break;
+            default: cout << "Ð’Ñ‹ Ð²Ð²ÐµÐ»Ð¸ Ð½ÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ! ÐŸÐ¾Ð¿Ñ€Ð¾Ð±ÑƒÐ¹Ñ‚Ðµ ÐµÑ‰Ðµ Ñ€Ð°Ð·!" << endl << endl; break;
         }
     }
     vector<humanInfo> hashTable(*tableSize);
@@ -42,15 +42,15 @@ int main()
         }
         elemOfTableGenerator(hashTable);
     }
-    cout << "Êîëè÷åñòâî êîëëèçèé: " << *countOfCollusions << endl << endl;
+    cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÐºÐ¾Ð»Ð»Ð¸Ð·Ð¸Ð¹: " << *countOfCollusions << endl << endl;
     choose = -1;
     while(choose)
     {
-        cout << "Âûáåðèòå äåéñòâèå: " << endl;
-        cout << "[1] Ïîèñê ýëåìåíòà." << endl;
-        cout << "[2] Ðàñïå÷àòàòü òàáëèöó." << endl;
-        cout << "[0] Âûõîä èç ïðîãðàììû." << endl;
-        cout << "Âàø âûáîð: ";
+        cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ: " << endl;
+        cout << "[1] ÐŸÐ¾Ð¸ÑÐº ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°." << endl;
+        cout << "[2] Ð Ð°ÑÐ¿ÐµÑ‡Ð°Ñ‚Ð°Ñ‚ÑŒ Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñƒ." << endl;
+        cout << "[0] Ð’Ñ‹Ñ…Ð¾Ð´ Ð¸Ð· Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñ‹." << endl;
+        cout << "Ð’Ð°Ñˆ Ð²Ñ‹Ð±Ð¾Ñ€: ";
         cin >> choose;
         cout << endl;
         switch(choose)
@@ -58,7 +58,7 @@ int main()
             case 1: searchElem(hashTable); break;
             case 2: print(hashTable); break;
             case 0: break;
-            default: cout << "Âû ââåëè íåïðàâèëüíîå çíà÷åíèå! Ïîïðîáóéòå åùå ðàç!" << endl << endl; break;
+            default: cout << "Ð’Ñ‹ Ð²Ð²ÐµÐ»Ð¸ Ð½ÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ! ÐŸÐ¾Ð¿Ñ€Ð¾Ð±ÑƒÐ¹Ñ‚Ðµ ÐµÑ‰Ðµ Ñ€Ð°Ð·!" << endl << endl; break;
         }
     }
 }
