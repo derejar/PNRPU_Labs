@@ -3,11 +3,6 @@
 
 class LONG : public Pair
 {
-    private:
-        int countOfZeros;
-
-        int getLength(int);
-        int correctLengthByOneNum(int &, int &);
     public:
         LONG(int, int);
         LONG();
