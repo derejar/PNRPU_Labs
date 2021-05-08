@@ -57,7 +57,22 @@ void List::del()
         std::cout << "Список пуст!" << std::endl;
         return;
     }
-    std::cout << "Введите имя элемента для его удаления";
+    std::cout << "Введите имя элемента для его удаления: ";
+    std::string toDel;
+    std::cin >> toDel;
+    Node *temp = start;
+    Node *forChange;
+    while(toDel != temp->data->getName() && temp != nullptr)
+    {
+        forChange = temp;
+        temp = temp->next;
+    }
+    if(toDel == temp->data->getName())
+    {
+        forChange->next = temp->next;
+        delete temp;
+        size--;
+    } 
 }
 
 void List::show()
@@ -84,9 +99,10 @@ void List::show()
 
 void List::getInfo(int index)
 {
-    if(index > size)
+    if(index > size || index == 0)
     {
         std::cout << "Указанный элемент не существует!" << std::endl;
+        return;
     }
     else
     {

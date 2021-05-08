@@ -11,6 +11,7 @@ class Student : public Person
         virtual ~Student();
         void show();
         void input();
+        std::string getName();
         float getRating();
         void setRating(float);
         Student &operator=(const Student &);

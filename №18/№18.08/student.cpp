@@ -11,6 +11,11 @@ Student::Student(std::string n, int a, float r) : Person(n, a)
     rating = r;
 }
 
+std::string Student::getName()
+{
+    return name;
+}
+
 Student::~Student(){}
 
 void Student::show()
