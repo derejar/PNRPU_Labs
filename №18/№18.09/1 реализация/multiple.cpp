@@ -2,6 +2,10 @@
 
 Multiple::Multiple(int s, int k=0)
 {
+    if(s > MAX_SIZE)
+    {
+        throw 1;
+    }
     size = s;
     data = new int[size];
     for(int i=0; i<size; i++)
@@ -48,7 +52,7 @@ Multiple &Multiple::operator+(Multiple &second)
 {
     if(size+second.size > MAX_SIZE)
     {
-        throw 3;
+        throw 2;
     }
     Multiple *temp = new Multiple(size+second.size);
     for(int i=0; i<size; i++)
@@ -66,7 +70,7 @@ Multiple &Multiple::operator++(int a)
 {
     if((size + 1) > MAX_SIZE)
     {
-        throw 1;
+        throw 3;
     }
     Multiple temp(size);
     for(int i=0; i<size; i++)
@@ -89,7 +93,7 @@ int &Multiple::operator[](int index)
 {
     if(index >= size || index < 0)
     {
-        throw 2;
+        throw 4;
     }
     return data[index];
 }
