@@ -1,4 +1,5 @@
 #pragma once
+#include <math.h>
 #include "money.h"
 
 Money &Money::operator=(const Money &a)
@@ -38,8 +39,13 @@ Money Money::operator-(Money a)
 Money Money::operator/(int temp)
 {
     Money t;
-    t.rub = rub/temp;
-    t.penny = penny/temp;
+    float first, result;    
+    first = ((rub * 100) + penny);
+    first/=100;
+    result = (float)first/temp;
+    result = round(result*100);
+    t.rub = result/100;
+    t.penny = fmod(result, 100);
     return t;
 }
 

@@ -19,7 +19,7 @@ class Money
     public:
         Money()
         {
-            rub = 0.0;
+            rub = 0;
             penny = 0;
         }
 
